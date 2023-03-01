@@ -6,7 +6,7 @@ export const questionSlice = createSlice({
     initialState,
     reducers: {
         next(state){
-            state.currentQ += 1
+            state.currentQ = state.currentQ + 1
         }
     }
 })

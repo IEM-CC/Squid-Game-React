@@ -7,7 +7,8 @@ export default function App() {
     <div className="h-screen w-screen overflow-hidden bg-[#FB3E64] flex justify-center items-center">
       <Routes>
         <Route path="/" element={<Name/>} />
-        <Route path="/quiz" element={<Quiz />}/>   
+        <Route path="/quiz" element={<Quiz />}/>  
+        {/* <Route path="/quiz" element={<Quiz />}/>   */}
       </Routes>
     </div>
   )
