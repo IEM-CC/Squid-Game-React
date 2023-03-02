@@ -10,7 +10,9 @@ const QuestionArea = (props) => {
     <div className="w-full items-center justify-center h-2/3">
       <Question qname={props.data[props.currentQ].Question} />
       <div className="flex flex-wrap w-2/3 m-auto justify-around overflow-y-auto h-2/3">
-        {props.data[props.currentQ].Options.map((i,index)=><Options correct={props.data[props.currentQ].Correct} key={index} onum={index+1} oname={i}/>)}
+        {props.data[props.currentQ].Options.map((i,index)=>
+        <Options correct={props.data[props.currentQ].Correct} 
+        key={index} onum={index+1} oname={i}/>)}
       </div>
     </div>
   );
