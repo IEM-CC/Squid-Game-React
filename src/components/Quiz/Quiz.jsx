@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { questionActions } from "../../store";
 const Quiz = () => {
   const currentQ = useSelector(state=>state.question.currentQ)
-  console.log(currentQ)
+  window.onunload = window.history.forward()
   return (
     <div className="flex flex-col items-center  h-screen w-screen">
       <Timer />

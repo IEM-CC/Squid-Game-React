@@ -1,14 +1,17 @@
 import React, { useState } from "react";
 import Countdown from "react-countdown";
+import { Navigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Timer = () => {
-  // const time = useSelector((state) => state.paper.duration);
-  const [settedDate, setDate] = useState(Date.now() + (10 * 1000));
+  const time = useSelector((state) => state.question.time);
+  const [settedDate, setDate] = useState(Date.now() + (time * 1000));
   const [completed, setCompleted] = useState(false);
   const renderer = ({ hours, minutes, seconds, completed }) => {
     if (completed) {
       // Render a completed state
       setCompleted(completed);
+      return <Navigate to='/results' />
       // Render a countdown
     } else {
       setCompleted(completed);
