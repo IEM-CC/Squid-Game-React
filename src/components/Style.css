@@ -17,3 +17,13 @@
     border-radius: 1rem;
     padding:1rem;
 }
+
+.optionCorrect{
+    width:14rem;
+    height:14rem;
+    border-radius: 1rem;
+    padding:1rem;
+    filter: drop-shadow(2px 4px 6px black);
+    background-color: #17b683dc; /* Just adjust the color or opacity to make the text pop! */
+    box-shadow: inset 0 0 0 200px rgba(255, 255, 255, 0.15);
+}

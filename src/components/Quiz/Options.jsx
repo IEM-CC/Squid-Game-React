@@ -3,7 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
 import { answerActions, questionActions } from "../../store";
 import "../Style.css";
+import brokenSound from "../../sounds/glass-breaking-93803.mp3";
+import CorrectAns from "../../sounds/correct-6033.mp3";
+
 const Options = (props) => {
+
   const dispatch = useDispatch();
   const [nav, setNav] = useState(false);
   const [broken, setBroken] = useState(false);
@@ -40,6 +44,7 @@ const Options = (props) => {
           time: time,
         })
       );
+      new Audio(CorrectAns).play();
       setBroken(false);
       setTime(0)
     } else {
@@ -51,17 +56,22 @@ const Options = (props) => {
         })
       );
       setBroken(true);
-      await delay(1000);
+      new Audio(brokenSound).play();
+      await delay(1500);
       setNav(true);
     }
+    
   };
 
   if (nav) {
     return <Navigate to="/results" />;
   }
 
+ 
+
+
   return (
-    <button onClick={clickHandler}>
+    <button  onClick={()=>{clickHandler();}}>
       <pre className={broken ? "optionButtonBroken" : "optionButton"}>
         {props.oname}
       </pre>
