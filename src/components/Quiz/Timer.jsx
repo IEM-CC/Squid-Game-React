@@ -4,8 +4,7 @@ import { Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const Timer = () => {
-  const time = useSelector((state) => state.question.time);
-  const [settedDate, setDate] = useState(Date.now() + (time * 1000));
+  const [settedDate, setDate] = useState(Date.now() + (2 * 60 * 60 * 1000));
   const [completed, setCompleted] = useState(false);
   const renderer = ({ hours, minutes, seconds, completed }) => {
     if (completed) {

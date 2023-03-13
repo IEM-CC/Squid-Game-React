@@ -8,7 +8,7 @@ const Quiz = () => {
   const currentQ = useSelector(state=>state.question.currentQ)
   window.onunload = window.history.forward()
   return (
-    <div className="flex flex-col items-center  h-screen w-screen">
+    <div className="flex flex-col items-center relative h-screen w-screen">
       <Timer />
       <QuestionArea data={data} currentQ={currentQ}/>
     </div>
