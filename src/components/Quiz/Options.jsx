@@ -13,7 +13,6 @@ const Options = (props) => {
   const [broken, setBroken] = useState(false);
   const [correct, setCorrect] = useState(false);
   const [time, setTime] = useState(0);
-  console.log(time)
   const [done, setDone] = useState(false);
   const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
   useEffect(() => {
@@ -39,11 +38,12 @@ const Options = (props) => {
   const clickHandler = async () => {
     setDone(true);
     if (props.correct === props.onum) {
+      dispatch(questionActions.modal(true))
       if (props.currentQ === props.length) {
         setNav(true);
         dispatch(questionActions.setTime(0))
+        
       } else {
-        setCorrect(false);
         dispatch(questionActions.next());
       }
       dispatch(
