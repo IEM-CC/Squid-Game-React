@@ -5,9 +5,9 @@ import { answerActions, questionActions } from "../../store";
 import "../Style.css";
 import brokenSound from "../../sounds/glass-breaking-93803.mp3";
 import CorrectAns from "../../sounds/correct-6033.mp3";
+import { data } from "../demo";
 
 const Options = (props) => {
-
   const dispatch = useDispatch();
   const [nav, setNav] = useState(false);
   const [broken, setBroken] = useState(false);
@@ -27,23 +27,22 @@ const Options = (props) => {
     return () => {
       clearInterval(interval);
     };
-
   }, []);
   useEffect(() => {
-     if(correct){
+    if (correct) {
       setCorrect(false);
-     }
+    }
   }, []);
-  
+
   const clickHandler = async () => {
     setDone(true);
     if (props.correct === props.onum) {
-      dispatch(questionActions.modal(true))
-      if (props.currentQ === props.length) {
+      dispatch(questionActions.modal(true));
+      if (props.currentQ === data.length - 1) {
         setNav(true);
-        dispatch(questionActions.setTime(0))
-        
-      } else {
+        dispatch(questionActions.setTime(0));
+      }
+      if (props.currentQ != 3) {
         dispatch(questionActions.next());
       }
       dispatch(
@@ -56,7 +55,7 @@ const Options = (props) => {
       new Audio(CorrectAns).play();
       setBroken(false);
       setCorrect(true);
-      setTime(0)
+      setTime(0);
     } else {
       dispatch(
         answerActions.add({
@@ -71,22 +70,20 @@ const Options = (props) => {
       await delay(1500);
       setNav(true);
     }
-    
   };
 
   if (nav) {
     return <Navigate to="/results" />;
   }
 
-
- 
-
-
   return (
-    <button  onClick={()=>{clickHandler();}}>
-      <pre className={broken ? 
-      "optionButtonBroken" : "optionButton"}
-            >
+    <button
+      onClick={() => {
+        clickHandler();
+      }}
+      className='w-full'
+    >
+      <pre style={{textAlign: 'initial'}} className={` w-full overflow-y-auto ${broken ? "optionButtonBroken" : "optionButton"}`}>
         {props.oname}
       </pre>
     </button>

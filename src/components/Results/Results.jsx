@@ -8,7 +8,7 @@ const Results = () => {
   const answer = useSelector((state) => state.answer.answer);
   console.log(answer);
   return (
-    <div className="w-screen flex flex-col justify-center items-center">
+    <div className="w-screen overflow-x-hidden overscroll-y-scroll h-5/6 pt-[240px] w-fit flex flex-col justify-center items-center">
       {data.map((i, index) => {
         if (answer[index]) {
           return (
@@ -26,7 +26,7 @@ const Results = () => {
               >
                 {answer[index].ans ? "Correct" : "InCorrect"}
               </span>
-              <span className="mx-5 bg-[#3eb5e4] p-3 rounded-xl text-white  ">
+              <span className="mx-5 w-[150px] bg-[#3eb5e4] p-3 rounded-xl text-white  ">
                 <FontAwesomeIcon icon={faClock} className="mr-3" />
                 {answer[index].time / 1000}s
               </span>
