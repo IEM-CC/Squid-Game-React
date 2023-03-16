@@ -11,6 +11,7 @@ const Options = (props) => {
   const dispatch = useDispatch();
   const [nav, setNav] = useState(false);
   const [broken, setBroken] = useState(false);
+  const [correct, setCorrect] = useState(false);
   const [time, setTime] = useState(0);
   console.log(time)
   const [done, setDone] = useState(false);
@@ -27,7 +28,14 @@ const Options = (props) => {
     return () => {
       clearInterval(interval);
     };
+
   }, []);
+  useEffect(() => {
+     if(correct){
+      setCorrect(false);
+     }
+  }, []);
+  
   const clickHandler = async () => {
     setDone(true);
     if (props.correct === props.onum) {
@@ -35,6 +43,7 @@ const Options = (props) => {
         setNav(true);
         dispatch(questionActions.setTime(0))
       } else {
+        setCorrect(false);
         dispatch(questionActions.next());
       }
       dispatch(
@@ -46,6 +55,7 @@ const Options = (props) => {
       );
       new Audio(CorrectAns).play();
       setBroken(false);
+      setCorrect(true);
       setTime(0)
     } else {
       dispatch(
@@ -55,6 +65,7 @@ const Options = (props) => {
           time: time,
         })
       );
+      setCorrect(false);
       setBroken(true);
       new Audio(brokenSound).play();
       await delay(1500);
@@ -67,12 +78,15 @@ const Options = (props) => {
     return <Navigate to="/results" />;
   }
 
+
  
 
 
   return (
     <button  onClick={()=>{clickHandler();}}>
-      <pre className={broken ? "optionButtonBroken" : "optionButton"}>
+      <pre className={broken ? 
+      "optionButtonBroken" : "optionButton"}
+            >
         {props.oname}
       </pre>
     </button>

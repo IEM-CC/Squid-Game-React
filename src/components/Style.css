@@ -1,8 +1,8 @@
 
 
 .optionButton{
-    width:14rem;
-    height:14rem;
+    width:20rem;
+    height:20rem;
     border-radius: 1rem;
     padding:1rem;
     filter: drop-shadow(2px 4px 6px black);
@@ -12,15 +12,15 @@
 .optionButtonBroken{
     background-image: url("../images/glass-g015310950_1920.jpg");
     background-size: 100% 100%;
-    width:14rem;
-    height:14rem;
+    width:20rem;
+    height:20rem;
     border-radius: 1rem;
     padding:1rem;
 }
 
 .optionCorrect{
-    width:14rem;
-    height:14rem;
+    width:20rem;
+    height:20rem;
     border-radius: 1rem;
     padding:1rem;
     filter: drop-shadow(2px 4px 6px black);
