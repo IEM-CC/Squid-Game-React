@@ -81,7 +81,6 @@ const Options = (props) => {
       onClick={() => {
         clickHandler();
       }}
-      className='w-full'
     >
       <pre style={{textAlign: 'initial'}} className={` w-full overflow-y-auto ${broken ? "optionButtonBroken" : "optionButton"}`}>
         {props.oname}
