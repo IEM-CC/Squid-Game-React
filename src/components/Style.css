@@ -39,8 +39,8 @@
 .squid{
   width:10rem;
   height:5rem;
-  position: relative;
-  top: -18rem;
-  left: 2rem;
+  position: absolute;
+  top: 2rem;
+  left: 5vw;
   border-radius: 2rem;
 }

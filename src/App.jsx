@@ -12,7 +12,8 @@ export default function App() {
     dispatch(questionActions.setTime(10))
   },[])
   return (
-    <div className="h-screen w-screen overflow-hidden  flex justify-center items-center main">
+    <div className="h-screen w-screen overflow-hidden relative
+      flex justify-center items-center main">
       <img src={pic} alt="" className="squid"/>
       <Routes>
         <Route path="/" element={<Name/>} />

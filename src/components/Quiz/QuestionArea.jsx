@@ -29,8 +29,8 @@ const QuestionArea = (props) => {
       </div>
       {open && props.currentQ === 3 && (
         <div className="absolute w-screen h-screen z-[100] top-0 left-0 flex justify-center items-center bg-[#00000040]">
-          <div className="px-6 py-5 bg-[#ffffff] rounded-xl flex flex-col">
-            <div>{props.data[props.currentQ].Answer}</div>
+          <div className="px-6 py-5 bg-[#ffffff] rounded-xl flex flex-col justify-center items-center">
+            <div className="text-2xl flex flex-col justify-center items-center"><span className="font-extrabold text-4xl">ELEVATE 2023</span><span>COMING SOON</span></div>
             <button
               onClick={() => {
                 dispatch(questionActions.next());
