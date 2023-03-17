@@ -133,7 +133,6 @@ export const data = [
   },
   {
     Question: `A program to print the following pattern
-
     *
     **
     ***
@@ -194,11 +193,9 @@ number %ld is: %d", number,count);
   {
     Question: `Select the appropriate code that will swap the two numbers a and b: 
     Example:
-                   INPUT:  a = 5, b = 3
-    OUTPUT:  a = 3, b = 5
-    
-    INPUT:  a = 2, b = 3
-    OUTPUT:  a = 3, b = 2
+    INPUT:  a = 5, b = 3     INPUT:  a = 2, b = 3
+    OUTPUT: a = 3, b = 5     OUTPUT:  a = 3, b = 2
+  
     `,
     Options: [`int main() {
       double first, second, temp;
