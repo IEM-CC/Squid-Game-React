@@ -8,7 +8,9 @@ export const data = [
           scanf("%d", &n);
           int d = n/10;
           int l = n%10;
-          if(d!=1 && d!=2 && d!=3 && d!=4 && d!=5 && d!=6 && d!=7 && d!=8 && d!=9 && l != 0)
+          if(d!=1 && d!=2 && d!=3 && d!=4 
+          && d!=5 && d!=6 && d!=7 && d!=8 
+          && d!=9 && l != 0)
           printf(“true”);
         }`,
       `int main(){
@@ -17,7 +19,9 @@ export const data = [
           scanf("%d", &n);
           int d = n/10;
           int l = n%10;
-          if(d!=1 && d!=2 && d!=3 && d!=4 && d!=5 && d!=6 && d!=7 && d!=8 && d!=9 && l == 0)
+          if(d!=1 && d!=2 && d!=3 && d!=4 
+          && d!=5 && d!=6 && d!=7 
+          && d!=8 && d!=9 && l == 0)
           printf(“true”);
         }`,
     ],
@@ -60,13 +64,12 @@ export const data = [
     
         printf("Enter the value of n");
         scanf("%d",&n);
-       for(count=1; count <= n; count++)
-        {
+       for(count=1; count <= n; count++){
             sum = sum + count;
         }
-    
-        printf("Sum of first %d natural numbers is: %d",n, sum);
-    
+        printf("Sum of first %d 
+        natural numbers is: %d",n, sum);
+
         return 0;
     }
     `,
@@ -76,13 +79,12 @@ export const data = [
     
         printf("Enter the value of n");
         scanf("%d",&n);
-       for(count=0; count <= n; count++)
-        {
+       for(count=0; count <= n; count++){
             sum = sum + count;
         }
-    
-        printf("Sum of first %d natural numbers is: %d",n, sum);
-    
+  
+        printf("Sum of first %d 
+        natural numbers is: %d",n, sum);
         return 0;
     }
     `,
@@ -169,7 +171,8 @@ export const data = [
         temp /= 10;
         ++count;
       } while (temp != 0);
-    printf("Number of digits in the number %ld is: %d", number,count);
+    printf("Number of digits in the 
+    number %ld is: %d", number,count);
     }
     
 `, `int main() {
@@ -180,7 +183,8 @@ do {
     temp /= 10;
     ++count;
   } while (temp != 0);
-printf("Number of digits in the number %ld is: %d", number,count);
+printf("Number of digits in the 
+number %ld is: %d", number,count);
   }
 `],
     Correct: 1,
@@ -199,8 +203,10 @@ printf("Number of digits in the number %ld is: %d", number,count);
       temp = first;
       first = temp;
       second = temp;
-      printf("\nAfter swapping, first number = %.2lf\n", first);
-      printf("After swapping, second number = %.2lf", second);
+      printf("After swapping, 
+          first number = %.2lf", first);
+      printf("After swapping, 
+          second number = %.2lf", second);
       return 0;
     }
     `, `int main() {
@@ -208,8 +214,10 @@ printf("Number of digits in the number %ld is: %d", number,count);
       temp = first;
       first = second;
       second = temp;
-      printf("\nAfter swapping, first number = %.2lf\n", first);
-      printf("After swapping, second number = %.2lf", second);
+      printf("After swapping, 
+          first number = %.2lf", first);
+      printf("After swapping, 
+          second number = %.2lf", second);
       return 0;
     }
     `],
