@@ -10,7 +10,6 @@ const Quiz = () => {
   if( currentQ === data.length){
     return <Navigate to='/results' />
   }
-  console.log(currentQ)
   window.onunload = window.history.forward()
   return (
     <div className="flex flex-col items-center relative h-screen w-screen">

@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-const initialState = {currentQ: 0, time: 0, modal: false}
+const initialState = {currentQ: 0, time: 0, modal: false, name:null}
 
 export const questionSlice = createSlice({
     name: 'questionSlice',
@@ -13,6 +13,9 @@ export const questionSlice = createSlice({
         },
         modal(state,action){
             state.modal = action.payload
+        },
+        setName(state,action){
+            state.name = action.payload;
         }
     }
 })

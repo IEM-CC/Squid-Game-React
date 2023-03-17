@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { useFormik } from "formik";
 import { Navigate, redirect } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { questionActions } from "../../store";
 
 const Name = () => {
   const [navigate, setNavigate] = useState(false)
+  const dispatch = useDispatch()
     const initialValues = {
         name: ''
     }
@@ -11,10 +14,10 @@ const Name = () => {
     const {values, errors, touched, handleChange, handleBlur, handleSubmit} = useFormik({
         initialValues,
         onSubmit: (value,action) => {
-            console.log(value);
             localStorage.setItem('name',JSON.stringify(value.name))
+            dispatch(questionActions.setName(value.name))
             setNavigate(true)
-            // action.resetForm()
+            action.resetForm()
         }
     })
   if(navigate){
